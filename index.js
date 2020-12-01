@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const authRoute = require("./routes/auth");
 
 dotenv.config();
 
@@ -14,8 +15,6 @@ mongoose.connect(
 );
 
 const PORT = 3000;
-
-const authRoute = require("./routes/auth");
 
 // Middleware
 app.use(express.json());
