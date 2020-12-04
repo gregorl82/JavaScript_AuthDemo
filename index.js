@@ -3,6 +3,7 @@ const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
+const postRoute = require("./routes/posts");
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(express.json());
 
 // Route middleware
 app.use("/api/user", authRoute);
+app.use("/api/post", postRoute);
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
